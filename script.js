@@ -254,11 +254,9 @@ function setupWeatherWidget() {
       '<p class="weather-result__placeholder">Loading trail conditions...</p>';
 
     try {
-      const url = `${WEATHER_API_URL}?q=${encodeURIComponent(
-        location
-      )}&units=imperial&appid=${WEATHER_API_KEY}`;
-
-      const response = await fetch(url);
+      const response = await fetch(
+        `/api/weather?city=${encodeURIComponent(location)}`
+      );
 
       console.log("Weather response ok?", response.ok, "status:", response.status);
 
