@@ -7,9 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
   setupWeatherWidget();
 });
 
-const WEATHER_API_KEY = "e415d953c5b44b27828ac76aa7b51550";
-const WEATHER_API_URL = "https://api.openweathermap.org/data/2.5/weather";
-
 function setupNav() {
   const buttons = document.querySelectorAll("[data-nav-target]");
   const sections = document.querySelectorAll(".page-section");
@@ -260,8 +257,6 @@ function setupWeatherWidget() {
       const url = `${WEATHER_API_URL}?q=${encodeURIComponent(
         location
       )}&units=imperial&appid=${WEATHER_API_KEY}`;
-
-      console.log("Weather request URL:", url);
 
       const response = await fetch(url);
 
